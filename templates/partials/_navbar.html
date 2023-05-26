@@ -1,0 +1,55 @@
+<header>
+    <div class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a href="{% url 'index' %}" class="navbar-brand">Movie App</a>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a href="{% url 'index' %}"
+                        {% if request.path == '/' or request.path == '/index' %}
+
+                            class = "nav-link active"
+
+                        {% endif %}
+                    class="nav-link" >Products</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about' %}"
+                    {% if 'about' in request.path %}
+                        class ="nav-link active"
+                    {% endif %}
+                    class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'movies' %}"
+                        {% if 'movies' in request.path %}
+
+                            class="nav-link active"
+                        
+                        {% endif %}
+
+                    class="nav-link">Movies</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="{% url 'login' %}" 
+                    {% if 'login' in request.path %}
+                        class="nav-link active"
+                    {% endif %}
+                    class="nav-link">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{% url 'register' %}" 
+                    {% if 'register' in request.path %}
+                        class="nav-link active"
+                    {% endif %}
+                    class="nav-link">Register</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>
+</header>
